@@ -71,3 +71,5 @@ class Waveform(object):
 def saveWaveform(file_path, save_path, file_name):
 	img = Waveform(file_path + file_name + '.wav')
 	return img.save(save_path)
+
+saveWaveform(FILE_PATH, SAVE_PATH, FILE_NAME)

@@ -4,10 +4,13 @@ import scipy.io.wavfile
 import math
 
 FILE_PATH = './sound/'
-FILE_NAME = 'micTest.wav'
+FILE_NAME = 'Han.wav'
 
 # 여유값 +- 1초
 def catchZone(second_list):
+	if len(second_list) == 0:
+		return []
+
 	output = []
 	s = second_list[0] - 1 if second_list[0] - 1 >= 0 else 0
 	e = second_list[0] + 1
@@ -38,7 +41,7 @@ def catchVoice(FILE):
 	flatten_top_times = len(flatten_top[::100])
 	sec_list = []
 	for i, v in enumerate(list(flatten_top[::100])):
-		gauge = abs(int(v)) // 600	# 잡음 제거
+		gauge = abs(int(v)) // 300	# 잡음 제거
 		if gauge == 0:
 			continue
 		else:
