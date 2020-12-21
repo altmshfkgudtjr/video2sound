@@ -1,7 +1,6 @@
 import numpy as np
 import scipy.io as sio
 import scipy.io.wavfile
-import sounddevice as sd
 import math
 
 FILE_PATH = './sound/'
