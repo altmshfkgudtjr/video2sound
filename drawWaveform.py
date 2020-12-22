@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw
 
 FILE_PATH = './sound/'
 SAVE_PATH = './image/waveform/'
-FILE_NAME = 'Han'
+FILE_NAME = 'micTest'
 
 class Waveform(object):
 	bar_count = 150

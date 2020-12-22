@@ -37,11 +37,16 @@ def catchVoice(FILE):
 	flatten_bottom = bottom.flatten()
 	flatten_top = top.flatten()
 
+	p = list(map(lambda x: abs(x), list(flatten_top)))
+	average = sum(p) / len(p)
+	print('최대값:    ', max(p))
+	print('평균:    ', average)
+
 	# soundwave 특이점 추출(second 단위)
 	flatten_top_times = len(flatten_top[::100])
 	sec_list = []
 	for i, v in enumerate(list(flatten_top[::100])):
-		gauge = abs(int(v)) // 300	# 잡음 제거
+		gauge = abs(int(v)) // (average * 4)	# 잡음 제거
 		if gauge == 0:
 			continue
 		else:
